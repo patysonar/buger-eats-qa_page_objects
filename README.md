@@ -1,1 +1,0 @@
-# buger-eats-qa_page_objects

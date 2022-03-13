@@ -12,7 +12,7 @@ class SignupPage {  // Vai representar a página de cadastro
     fillForm(deliver) {  // Vai preencher todo formulario de cadastro
 
         ////**** Aula - Preenchendo campos ****////
-        cy.get('input[name = "name"]').type(deliver.name)
+        cy.get('input[name = "fullName"]').type(deliver.name)
         cy.get('input[name = "cpf"]').type(deliver.cpf)
         cy.get('input[name = "email"]').type(deliver.email)
         cy.get('input[name = "whatsapp"]').type(deliver.whatsapp)
@@ -50,7 +50,8 @@ class SignupPage {  // Vai representar a página de cadastro
 
     alertMessageShoudBe(expectedMessage) {
         ////**** Aula - Validando span de alerta ****////
-        cy.get('.alert-error').should('have.text', expectedMessage)
+        //cy.get('.alert-error').should('have.text', expectedMessage) //A função get foi preparada para receber um elemento e aobrigatóriedade tem 7
+        cy.contains('.alert-error', expectedMessage).should('be.visible')
     }
 }
 
